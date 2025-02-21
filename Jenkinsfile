@@ -21,8 +21,19 @@ pipeline {
 
         stage('Deployment') {
             steps {
-                echo "Deployment"
+                script {
+                    def branchName = '${env.BRANCH_NAME}'
+                    
+                }
             }
         }
+    }
+}
+
+def void deploy(String branchName) {
+    if (branchName == 'dev') {
+        println(branchName)
+    } else {
+        println(branchName)
     }
 }

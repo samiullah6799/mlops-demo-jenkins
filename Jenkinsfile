@@ -1,26 +1,26 @@
 pipeline {
     agent any
     stages {
-        stage{
-            steps('Checkout') {
+        stage('Checkout') {
+            steps {
                 checkout scmGit(branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/samiullah6799/mlops-demo-jenkins.git']])
             }
         }
 
-        stage{
-            steps('Building') {
+        stage('Building') {
+            steps {
                 sh 'pip3 install -r requirements.txt'
             }
         }
 
-        stage {
-            steps ('Testing') {
+        stage('Testing') {
+            steps {
                 sh 'pytest test.py'
             }
         }
 
-        stage {
-            steps ('Deployment') {
+        stage('Deployment') {
+            steps {
                 echo "Deployment"
             }
         }

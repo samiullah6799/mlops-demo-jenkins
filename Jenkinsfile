@@ -22,8 +22,7 @@ pipeline {
         stage('Deployment') {
             steps {
                 script {
-                    def branchName = ${env.BRANCH_NAME}
-                    deploy(branchName)
+                    println("Branch Name : ${env.BRANCH_NAME}")
                 }
             }
         }

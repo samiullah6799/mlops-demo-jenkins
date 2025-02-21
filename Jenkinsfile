@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     def branchName = '${env.BRANCH_NAME}'
-                    
+                    deploy(branchName)
                 }
             }
         }

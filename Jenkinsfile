@@ -22,7 +22,7 @@ pipeline {
         stage('Deployment') {
             steps {
                 script {
-                    println("Branch Name : ${env.BUILD_NUMBER}")
+                    println("Branch Name : ${env.BRANCH}")
                 }
             }
         }
